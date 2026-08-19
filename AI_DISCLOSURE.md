@@ -21,9 +21,9 @@ ChatGPT was used as a collaborative technical assistant for:
 |---|---|
 | README.md | High - initial structure and wording drafted collaboratively with ChatGPT |
 | DESIGN.md | High - initial structure and wording drafted collaboratively with ChatGPT |
+| kubernetes/rbac/app-deployer-csr.yaml | High - Kubernetes CSR configuration developed with ChatGPT |
 | AI_DISCLOSURE.md | High - initial wording drafted with ChatGPT |
 
 Additional files will be added to this table as AI assistance is used.
 
 All commands and configurations are executed, validated, and understood by the
-candidate before submission.
