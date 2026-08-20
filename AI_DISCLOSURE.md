@@ -28,6 +28,9 @@ ChatGPT was used as a collaborative technical assistant for:
 | kubernetes/nginx/configmap.yaml | High - Nginx static site ConfigMap developed with ChatGPT |
 | kubernetes/nginx/deployment.yaml | High - Nginx Deployment manifest developed with ChatGPT |
 | kubernetes/nginx/service.yaml | High - Kubernetes Service manifest developed with ChatGPT |
+| kubernetes/cert-manager/clusterissuer.yaml | High - cert-manager ClusterIssuer manifest developed with ChatGPT |
+| kubernetes/ingress/ingress.yaml | High - Kubernetes Ingress manifest developed with ChatGPT |
+| kubernetes/rbac/app-deployer-role.yaml | High - RBAC Role extended for Ingress permissions with ChatGPT |
 | AI_DISCLOSURE.md | High - initial wording drafted with ChatGPT |
 
 Additional files will be added to this table as AI assistance is used.

@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: peach-cheesecake
+  namespace: nginx-app
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - peach-cheesecake.local
+      secretName: peach-cheesecake-tls
+  rules:
+    - host: peach-cheesecake.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: peach-cheesecake
+                port:
+                  number: 80
