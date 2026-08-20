@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: peach-cheesecake-site
+  namespace: nginx-app
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Peach Cheesecake</title>
+      <style>
+        body {
+          font-family: Georgia, serif;
+          max-width: 800px;
+          margin: 40px auto;
+          padding: 0 20px;
+          line-height: 1.6;
+          background: #fffaf4;
+          color: #3d2b1f;
+        }
+        h1, h2 { color: #b45f3c; }
+        .card {
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 14px rgba(0,0,0,.08);
+        }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <h1>Peach Cheesecake</h1>
+        <p>A creamy cheesecake topped with sweet peaches.</p>
+
+        <h2>Ingredients</h2>
+        <ul>
+          <li>2 cups graham cracker crumbs</li>
+          <li>1/2 cup melted butter</li>
+          <li>24 oz cream cheese, softened</li>
+          <li>1 cup sugar</li>
+          <li>3 eggs</li>
+          <li>1 teaspoon vanilla</li>
+          <li>2 cups sliced peaches</li>
+        </ul>
+
+        <h2>Directions</h2>
+        <ol>
+          <li>Preheat oven to 325°F.</li>
+          <li>Combine graham cracker crumbs and butter and press into a springform pan.</li>
+          <li>Beat cream cheese and sugar until smooth.</li>
+          <li>Add eggs one at a time, then mix in vanilla.</li>
+          <li>Pour filling over the crust.</li>
+          <li>Bake until the center is almost set, approximately 50–60 minutes.</li>
+          <li>Cool completely, refrigerate, and top with sliced peaches before serving.</li>
+        </ol>
+      </div>
+    </body>
+    </html>

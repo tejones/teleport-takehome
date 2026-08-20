@@ -22,6 +22,12 @@ ChatGPT was used as a collaborative technical assistant for:
 | README.md | High - initial structure and wording drafted collaboratively with ChatGPT |
 | DESIGN.md | High - initial structure and wording drafted collaboratively with ChatGPT |
 | kubernetes/rbac/app-deployer-csr.yaml | High - Kubernetes CSR configuration developed with ChatGPT |
+| kubernetes/namespace.yaml | High - namespace manifest developed with ChatGPT |
+| kubernetes/rbac/app-deployer-role.yaml | High - namespace-scoped RBAC Role developed with ChatGPT |
+| kubernetes/rbac/app-deployer-rolebinding.yaml | High - RBAC RoleBinding developed with ChatGPT |
+| kubernetes/nginx/configmap.yaml | High - Nginx static site ConfigMap developed with ChatGPT |
+| kubernetes/nginx/deployment.yaml | High - Nginx Deployment manifest developed with ChatGPT |
+| kubernetes/nginx/service.yaml | High - Kubernetes Service manifest developed with ChatGPT |
 | AI_DISCLOSURE.md | High - initial wording drafted with ChatGPT |
 
 Additional files will be added to this table as AI assistance is used.
