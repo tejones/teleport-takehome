@@ -36,6 +36,7 @@ ChatGPT was used as a collaborative technical assistant for:
 | scripts/init-control-plane.sh | High - kubeadm control-plane initialization script developed with ChatGPT |
 | scripts/join-worker.md | High - worker-node join procedure developed with ChatGPT |
 | scripts/install-platform-components.sh | High - Calico, cert-manager, and ingress-nginx installation script developed with ChatGPT |
+| docs/demo-script.md | High - Interview demonstration runbook developed with ChatGPT |
 | AI_DISCLOSURE.md | High - initial wording drafted with ChatGPT |
 
 Additional files will be added to this table as AI assistance is used.
