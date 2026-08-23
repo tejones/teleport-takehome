@@ -99,6 +99,10 @@ The client certificate was requested with a 24-hour lifetime.
 The private key was generated on the client workstation and was never
 transferred to the Kubernetes nodes or committed to this repository.
 
+For clean-environment reproduction, `scripts/create-app-deployer-csr.sh` generates
+a fresh local private key and CSR, then renders a Kubernetes
+CertificateSigningRequest manifest containing only the public request.
+
 ## Authorization
 
 Authentication does not grant application permissions.
@@ -186,6 +190,9 @@ lab certificate authority or accept the certificate for testing.
 ## Repository Structure
 
 ```text
+docs/
+└── demo-script.md
+
 kubernetes/
 ├── cert-manager/
 │   └── clusterissuer.yaml
@@ -201,6 +208,22 @@ kubernetes/
 │   └── app-deployer-rolebinding.yaml
 └── namespace.yaml
 
+optional/
+└── teleport/
+    ├── README.md
+    ├── app-deployer-role.yaml
+    ├── app-deployer-rolebinding.yaml
+    ├── pv.yaml
+    └── values.yaml
+
+scripts/
+├── create-app-deployer-csr.sh
+├── init-control-plane.sh
+├── install-kubernetes.sh
+├── install-platform-components.sh
+├── join-worker.md
+└── prepare-node.sh
+
 AI_DISCLOSURE.md
 DESIGN.md
 README.md
@@ -211,7 +234,7 @@ README.md
 Private keys, kubeconfigs, signed client certificates, bootstrap tokens, and other
 local credentials are excluded from source control. The Kubernetes CSR manifest is
 intentionally committed because it contains the public certificate request, not the
-users private key.
+user's private key.
 
 The implementation intentionally separates authentication, authorization, and
 application access rather than treating possession of Kubernetes credentials
@@ -232,12 +255,6 @@ as equivalent to administrative access.
 - [x] Browser-accessible HTTPS endpoint
 - [ ] Clean-environment reproducibility validation
 
-## AI Assistance
-
-AI assistance was used during development of this exercise.
-
-See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for file-level disclosure.
-
 ## Optional Teleport Integration
 
 The optional Teleport objective was also completed.
@@ -257,3 +274,10 @@ cluster nodes:    denied
 This demonstrates that Teleport can broker short-lived, MFA-backed Kubernetes identity while Kubernetes RBAC continues to enforce workload authorization.
 
 See [`optional/teleport/README.md`](optional/teleport/README.md) for the full implementation, tradeoffs, and validation steps.
+
+## AI Assistance
+
+AI assistance was used during development of this exercise.
+
+See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for file-level disclosure.
+

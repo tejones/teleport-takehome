@@ -31,6 +31,7 @@ ChatGPT was used as a collaborative technical assistant for:
 | kubernetes/cert-manager/clusterissuer.yaml | High - cert-manager ClusterIssuer manifest developed with ChatGPT |
 | kubernetes/ingress/ingress.yaml | High - Kubernetes Ingress manifest developed with ChatGPT |
 | kubernetes/rbac/app-deployer-role.yaml | High - RBAC Role extended for Ingress permissions with ChatGPT |
+| scripts/create-app-deployer-csr.sh | High - reproducible app-deployer key, CSR, and Kubernetes CSR manifest generation script developed with ChatGPT |
 | scripts/prepare-node.sh | High - Kubernetes node preparation script developed with ChatGPT |
 | scripts/install-kubernetes.sh | High - Kubernetes and containerd installation script developed with ChatGPT |
 | scripts/init-control-plane.sh | High - kubeadm control-plane initialization script developed with ChatGPT |
@@ -46,4 +47,4 @@ ChatGPT was used as a collaborative technical assistant for:
 
 Additional files will be added to this table as AI assistance is used.
 
-All commands and configurations are executed, validated, and understood by the
+All commands and configurations are executed, validated, and understood by the candidate before submission.

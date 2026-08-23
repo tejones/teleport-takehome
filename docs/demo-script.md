@@ -119,16 +119,50 @@ Highlight `scripts/`, `kubernetes/`, `README.md`, `DESIGN.md`, and `AI_DISCLOSUR
 
 Explain that node preparation, Kubernetes installation, control-plane initialization, worker joining, and platform components are documented without committing bootstrap tokens or credentials.
 
-## 13:00-15:00 — Teleport Relevance
+## 13:00-15:00 — Optional Teleport Integration
+Show the native-to-Teleport contrast rather than only describing it.
+
+First summarize the required native path:
+
+```text
+private key -> CSR -> signed client certificate -> kubeconfig -> Kubernetes RBAC
+```
+
+Then show the working Teleport path from the Mac:
+
+```bash
+tsh status
+tsh kube ls
+tsh kube login teleport-takehome --insecure
+kubectl auth can-i list pods -n nginx-app
+kubectl auth can-i list pods -n default
+kubectl auth can-i list nodes
+```
+
+Expected authorization result:
+
+```text
+yes
+no
+no
+```
+
 Say:
-> The Kubernetes-native solution works, but implementing it exposes the operational access-management problem. I now have a private key and kubeconfig on my workstation, and someone must manage certificate issuance, distribution, expiration, renewal, revocation, RBAC, lifecycle, and auditing.
+> The optional objective lets me show the same least-privilege authorization model with a different identity lifecycle. Instead of manually distributing a client key, certificate, and kubeconfig, the user authenticates to Teleport with password and OTP MFA and receives a short-lived Teleport identity.
 
-> That is manageable for one user and one cluster. It becomes much harder with dozens of clusters and hundreds of developers, SREs, and contractors.
+> Teleport maps that identity to the `teleport-app-deployers` Kubernetes group, and the existing Kubernetes RoleBinding and Role still enforce namespace-scoped authorization.
 
-> At that scale I would want centralized identity, IdP integration, short-lived credentials, consistently governed access, strong auditing, and just-in-time access instead of independently distributing static credentials or maintaining standing privileges.
+Then summarize the Teleport path:
+
+```text
+password + OTP MFA
+  -> Teleport short-lived identity
+  -> teleport-app-deployers Kubernetes group
+  -> existing Kubernetes RBAC
+```
 
 Close:
-> This implementation is both a working Kubernetes security model and a baseline for discussing how infrastructure access changes as an organization scales.
+> Teleport does not replace Kubernetes RBAC in this design. It improves the identity, MFA, credential lifecycle, and access-brokering layer in front of Kubernetes while Kubernetes continues to enforce workload authorization.
 
 # Backup Commands
 
@@ -158,6 +192,16 @@ kubectl get secret peach-cheesecake-tls -n nginx-app
 kubectl get pods -n ingress-nginx
 kubectl get svc -n ingress-nginx
 kubectl get pods -n cert-manager
+```
+
+## Teleport
+```bash
+tsh status
+tsh kube ls
+tsh kube login teleport-takehome --insecure
+kubectl auth can-i list pods -n nginx-app
+kubectl auth can-i list pods -n default
+kubectl auth can-i list nodes
 ```
 
 # Troubleshooting Framework
