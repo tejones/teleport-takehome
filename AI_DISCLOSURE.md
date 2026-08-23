@@ -23,14 +23,13 @@ ChatGPT was used as a collaborative technical assistant for:
 | DESIGN.md | High - initial structure and wording drafted collaboratively with ChatGPT |
 | kubernetes/rbac/app-deployer-csr.yaml | High - Kubernetes CSR configuration developed with ChatGPT |
 | kubernetes/namespace.yaml | High - namespace manifest developed with ChatGPT |
-| kubernetes/rbac/app-deployer-role.yaml | High - namespace-scoped RBAC Role developed with ChatGPT |
+| kubernetes/rbac/app-deployer-role.yaml | High - namespace-scoped RBAC Role developed and extended for Ingress permissions with ChatGPT |
 | kubernetes/rbac/app-deployer-rolebinding.yaml | High - RBAC RoleBinding developed with ChatGPT |
 | kubernetes/nginx/configmap.yaml | High - Nginx static site ConfigMap developed with ChatGPT |
 | kubernetes/nginx/deployment.yaml | High - Nginx Deployment manifest developed with ChatGPT |
 | kubernetes/nginx/service.yaml | High - Kubernetes Service manifest developed with ChatGPT |
 | kubernetes/cert-manager/clusterissuer.yaml | High - cert-manager ClusterIssuer manifest developed with ChatGPT |
 | kubernetes/ingress/ingress.yaml | High - Kubernetes Ingress manifest developed with ChatGPT |
-| kubernetes/rbac/app-deployer-role.yaml | High - RBAC Role extended for Ingress permissions with ChatGPT |
 | scripts/create-app-deployer-csr.sh | High - reproducible app-deployer key, CSR, and Kubernetes CSR manifest generation script developed with ChatGPT |
 | scripts/prepare-node.sh | High - Kubernetes node preparation script developed with ChatGPT |
 | scripts/install-kubernetes.sh | High - Kubernetes and containerd installation script developed with ChatGPT |
