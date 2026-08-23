@@ -208,8 +208,10 @@ README.md
 
 ## Security
 
-Private keys, kubeconfigs, certificates, CSRs, bootstrap tokens, and other
-local credentials are excluded from source control.
+Private keys, kubeconfigs, signed client certificates, bootstrap tokens, and other
+local credentials are excluded from source control. The Kubernetes CSR manifest is
+intentionally committed because it contains the public certificate request, not the
+users private key.
 
 The implementation intentionally separates authentication, authorization, and
 application access rather than treating possession of Kubernetes credentials
