@@ -1,0 +1,16 @@
+chartMode: standalone
+
+clusterName: teleport.local
+
+publicAddr:
+  - teleport.local:31546
+kubeClusterName: teleport-takehome
+
+proxyListenerMode: multiplex
+
+service:
+  type: NodePort
+
+authentication:
+  secondFactors:
+    - otp

@@ -37,6 +37,11 @@ ChatGPT was used as a collaborative technical assistant for:
 | scripts/join-worker.md | High - worker-node join procedure developed with ChatGPT |
 | scripts/install-platform-components.sh | High - Calico, cert-manager, and ingress-nginx installation script developed with ChatGPT |
 | docs/demo-script.md | High - Interview demonstration runbook developed with ChatGPT |
+| optional/teleport/README.md | High - optional Teleport integration documentation developed with ChatGPT |
+| optional/teleport/values.yaml | High - Teleport Helm configuration developed with ChatGPT |
+| optional/teleport/pv.yaml | High - static PersistentVolume manifest developed with ChatGPT |
+| optional/teleport/app-deployer-role.yaml | High - least-privilege Teleport role developed with ChatGPT |
+| optional/teleport/app-deployer-rolebinding.yaml | High - Kubernetes group RoleBinding for Teleport developed with ChatGPT |
 | AI_DISCLOSURE.md | High - initial wording drafted with ChatGPT |
 
 Additional files will be added to this table as AI assistance is used.
