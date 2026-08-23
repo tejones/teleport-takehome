@@ -235,3 +235,23 @@ as equivalent to administrative access.
 AI assistance was used during development of this exercise.
 
 See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for file-level disclosure.
+
+## Optional Teleport Integration
+
+The optional Teleport objective was also completed.
+
+Teleport Community Edition 18.10.7 was deployed in standalone mode using the `teleport-cluster` Helm chart. The Kubernetes cluster is exposed through Teleport as `teleport-takehome`.
+
+A local Teleport user authenticates with password and OTP MFA and receives a short-lived Teleport identity. The final Teleport role maps the user to the Kubernetes group `teleport-app-deployers`, which is bound to the existing namespace-scoped `app-deployer` Role.
+
+Access through the Teleport-backed kube context was verified as:
+
+```text
+nginx-app pods:   allowed
+default pods:     denied
+cluster nodes:    denied
+```
+
+This demonstrates that Teleport can broker short-lived, MFA-backed Kubernetes identity while Kubernetes RBAC continues to enforce workload authorization.
+
+See [`optional/teleport/README.md`](optional/teleport/README.md) for the full implementation, tradeoffs, and validation steps.
